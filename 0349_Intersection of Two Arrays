@@ -1,0 +1,15 @@
+var intersection = function(nums1, nums2) {
+    const result = new Set();
+    const set = new Set(nums2);
+
+    for (num of nums1){
+        //search in a array - O(n)
+        //Set Map - .has - O(1)
+        //if (nums2.includes(num)){
+        if (set.has(num)) {
+            result.add(num);
+        }
+    }
+
+    return Array.from(result);
+};

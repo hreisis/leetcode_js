@@ -1,0 +1,12 @@
+var twoSum = function(nums, target) {
+    const map = new Map();
+    for ( i = 0; i < nums.length; i++){
+        const oppo = target - nums[i];
+        if (map.has(oppo)) {
+            return [map.get(oppo), i];
+        } else {
+            map.set(nums[i],i);
+        }
+    }
+    return [];
+};
