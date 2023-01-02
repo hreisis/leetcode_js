@@ -13,9 +13,19 @@
  var removeNthFromEnd = function(head, n) {
     let dummy = new ListNode();
     dummy.next = head;
-    let pre = dummy;
-    let curr = head;
-    while (curr){
-        let fast = curr.next;
+
+    let n1 = dummy;
+    let n2 = dummy;
+
+    for (let i=0; i<=n; i++){
+        n2 = n2.next;
+    } //n2 比 n1提前多少位
+
+    while (n2 !== null){
+        n1 = n1.next;
+        n2 = n2.next;
     }
+
+    n1.next = n1.next.next;
+    return dummy.next;
 };
