@@ -4,8 +4,8 @@
  * @return {number}
  */
 /**idea: 快慢指针
-跳过对目标 val 的处理，这样就相当于删除了 val
-对于不等于 val 的数据，做指针的偏移处理 */
+快指针找要删除的值之后一个值（新数组需要的值）
+use slow to add number to the new array */
  var removeElement = function (nums, val) {
     if (nums.length === 0) return 0;
     let slow = 0,
